@@ -5,11 +5,11 @@
 public class AuthController(IAwsCognitoService cognitoService) : ControllerBase
 {
     [HttpPost("login")]
-    public async Task<IActionResult> Login(string email, string password)
+    public async Task<IActionResult> Login([FromBody] LoginDto request)
     {
         try
         {
-            var response = await cognitoService.AuthenticateUser(email, password);
+            var response = await cognitoService.AuthenticateUser(request.Email, request.Password);
             if (response.AuthenticationResult != null)
             {
                 return Ok(new { Token = response.AuthenticationResult.IdToken });
@@ -30,7 +30,7 @@ public class AuthController(IAwsCognitoService cognitoService) : ControllerBase
 
     [HttpPost("respondToNewPasswordRequired")]
     public async Task<IActionResult> RespondToNewPasswordRequired(
-        string email,
+        [FromBody] string email,
         string newPassword,
         string session
     )

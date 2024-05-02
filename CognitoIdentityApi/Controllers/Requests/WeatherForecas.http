@@ -1,6 +1,4 @@
-@CognitoIdentityApi_HostAddress = http://localhost:5093
+@CognitoIdentityApi_HostAddress = https://localhost:32776
 
 GET {{CognitoIdentityApi_HostAddress}}/weatherforecast/
 Accept: application/json
-
-###

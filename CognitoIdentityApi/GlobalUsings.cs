@@ -6,6 +6,7 @@ global using Amazon;
 global using Amazon.CognitoIdentityProvider;
 global using Amazon.CognitoIdentityProvider.Model;
 global using Amazon.Runtime;
+global using CognitoIdentityApi.Dtos;
 global using CognitoIdentityApi.Services;
 global using CognitoIdentityApi.Services.Interfaces;
 global using Microsoft.AspNetCore.Mvc;

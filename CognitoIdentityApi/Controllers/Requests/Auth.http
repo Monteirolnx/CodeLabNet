@@ -1,0 +1,20 @@
+@CognitoIdentityApi_HostAddress = https://localhost:32776
+
+### Login
+POST {{CognitoIdentityApi_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "",
+    "password": ""
+}
+
+### Respond to New Password Required
+POST {{CognitoIdentityApi_HostAddress}}/api/auth/respondToNewPasswordRequired
+Content-Type: application/json
+
+{
+    "email": "user@example.com",
+    "newPassword": "newpassword123",
+    "session": "sessionTokenHere"
+}
